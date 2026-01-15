@@ -1,0 +1,7 @@
+services:
+  logbook-server:
+    image: giosava94/logbook-server:5.1.2
+    container_name: logbook-server
+    ports:
+      - "8080:8080"
+    command: java -jar service-logbook-server-5.1.2.jar
