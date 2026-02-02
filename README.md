@@ -58,6 +58,8 @@ curl --location --insecure --request PUT 'https://localhost:8181/Olog/logs' \
          }'
 ```
 
+**By default, when using inMemory Authentication. Username is `admin` and password is `adminPass`.**
+
 ## Phoebus clients
 
 Set your client settings are as follows:
