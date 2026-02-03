@@ -13,7 +13,7 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./email-notifier-module/ ./email-notifier-module/
-RUN if [ ${INSTALL_EMAIL_NOTIFIER} ]; then \
+RUN if ${INSTALL_EMAIL_NOTIFIER}; then \
         git clone -b fix-notify-with-attachment --single-branch https://github.com/giosava94/phoebus-olog.git; \
         git clone https://github.com/giosava94/phoebus-olog-email-notifier-module.git; \
         cd phoebus-olog-email-notifier-module; \
