@@ -1,7 +1,7 @@
 services:
-  logbook-server:
-    image: giosava94/logbook-server:5.1.2
-    container_name: logbook-server
+  logbook-backend:
+    image: giosava94/olog:5.1.2-email-notifier-1.2.0
+    container_name: logbook-backend
     ports:
       - "8080:8080"
-    command: java -jar service-logbook-server-5.1.2.jar
+    command: java -Djavax.net.ssl.trustStore=/usr/lib/jvm/java-25-amazon-corretto/lib/security/cacerts -jar /olog-target/service-olog.jar
