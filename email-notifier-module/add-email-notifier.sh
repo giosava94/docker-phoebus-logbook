@@ -13,4 +13,6 @@ awk '
     next
   }
   { print }
-' phoebus-olog/pom.xml > pom.xml.tmp && mv pom.xml.tmp phoebus-olog/pom.xml
+' phoebus-olog/pom.xml > pom.xml.tmp
+awk -v repl="$EMAIL_NOTIFIER_VERSION" '{gsub(/EMAIL_NOTIFIER_VERSION/, repl); print}' pom.xml.tmp > phoebus-olog/pom.xml
+rm pom.xml.tmp
