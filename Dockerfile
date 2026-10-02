@@ -15,7 +15,7 @@ RUN apt update \
 
 COPY ./email-notifier-module/ ./email-notifier-module/
 RUN if ${INSTALL_EMAIL_NOTIFIER}; then \
-        git clone -b fix-notify-with-attachment --single-branch https://github.com/giosava94/phoebus-olog.git; \
+        git clone -b fix-notifier --single-branch https://github.com/giosava94/phoebus-olog.git; \
         git clone -b v${EMAIL_NOTIFIER_VERSION} --single-branch https://github.com/giosava94/phoebus-olog-email-notifier-module.git; \
         cd phoebus-olog-email-notifier-module; \
         mvn clean install -q -DskipTests=true -Dmaven.javadoc.skip=true; \
